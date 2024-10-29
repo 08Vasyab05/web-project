@@ -1,0 +1,770 @@
+body {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex; 
+    align-items: center; 
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    background-image: url(Photo/546775483298833270721.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 120px 0 50px;
+    height: auto; 
+    z-index: 1; /* Зменшено */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 0; /* Зменшено */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    margin-top: 50px;
+    margin-left: 30px;
+    height: 80px; 
+}
+
+.nav {
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 80px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    gap: 20px; 
+}
+
+.nav-list li {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+.nav-list-link {
+    position: relative;
+}
+    
+.nav-list-link::after {
+    background: #0eac2b;
+    bottom: -8px;
+    content: "";
+    height: 2px;
+    left: 0;
+    position: absolute;
+    transform: scaleX(0);
+    transition: all .25s ease;
+    width: 100%;
+}
+
+.nav-list-link:hover {
+    color: #0eac2b;
+}
+
+.nav-list-link:hover::after {
+    transform: scaleX(1);
+}
+
+.ua-container {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+}
+
+.ua-text {
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.nav-toggle {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+}
+
+.nav-toggle {
+    display: none;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Початково прихована */
+    z-index: 5;
+}
+
+/* Вертикальне меню */
+.nav-list-vertical {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 250px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    display: none; /* Початково прихована */
+    z-index: 10;
+    gap: 2px;
+    margin-top: 20px;
+}
+
+.nav-list-vertical .ua-text {
+    color: white; /* Змінює колір тексту на білий */
+    font-size: 20px;
+}
+
+.nav-list-vertical li {
+    margin: 15px 0;
+}
+
+.nav-list-vertical a {
+    color: white;
+    font-size: 18px;
+}
+
+.information {
+    height: auto;
+    position: relative; /* Додано */
+    z-index: 3; /* Вищий z-index, щоб бути над header */
+}
+
+.information-title {
+    font-family:"EB Garamond", serif;
+    color: #0eac2b;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 90.33px;
+    margin-left: 120px;
+    letter-spacing: 5px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.emphasis {
+    position: relative;
+    display: inline-block;
+}
+
+.emphasis::after {
+    content: "";
+    position: absolute;
+    left: -50px; /* Вихід на 10px вліво */
+    right: -50px; /* Вихід на 10px вправо */
+    bottom: -8px;
+    background: #0eac2b;
+    height: 10px;
+    border-radius: 100px;
+    transition: all 0.25s ease;
+}
+
+.information-text {
+    /* height: 52vh; */
+    font-family: 'Comfortaa', sans-serif;
+    color: #ffffff ;
+    font-size: 25px;
+    line-height: 45.17px;
+    letter-spacing: 3px;
+    margin-top: 150px;
+    margin-bottom: 100px;
+}
+
+.big {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.color{
+    color:#0eac2b;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.button-hidden {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    vertical-align: -0.125em;
+    cursor: pointer;
+}
+
+.fixed-button {
+    background-color: transparent;
+    opacity: 70%;
+    position: absolute;
+    bottom: 10px; 
+    right: 40px;   
+    cursor: pointer;
+    z-index: 5; /* Вищий z-index, щоб бути на передньому плані */
+}
+
+.fixed-button img {
+    width: 100px; 
+    padding: 5px;
+    background-color: white;
+    height: 100px; 
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease; 
+    margin-bottom: 20px;
+}
+
+.fixed-button img:hover {
+    transform: scale(1.1); 
+}
+
+@media screen and (max-width: 900px) {
+    .nav-list {
+        display: none;
+    }
+    .nav-toggle {
+        display: block;
+    }
+}
+
+.center-block {
+    margin: 0;
+    height: 300px;
+    background-color: rgb(215, 215, 215);
+    justify-content: space-between;
+    display: flex-start;
+    padding: 20px;
+}
+
+.center-list {
+    flex: 1;
+    height: 100px;
+    max-width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.outer-circle {
+    width: 90px;
+    height: 90px;
+    background-color: #699C74;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: -75px;
+}
+
+.circle {
+    width: 60px;
+    height: 60px;
+    background-color: #344F39; 
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin: 0 auto;
+}
+
+.center-list span {
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    margin-top: 20px;
+    display: block;
+    font-size: 25px;
+    color: black;
+    line-height: 25.2px;
+    letter-spacing: 2px;
+}
+
+.dot {
+    font-weight: bold;
+    font-size: 40px;
+    align-items: flex-start;
+}
+
+.work-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative; 
+    background-image: url(Photo/546775483298833270754.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 2; 
+}
+
+
+.work-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); 
+    z-index: 1; 
+}
+
+.work-container h1 {
+    font-family:"EB Garamond", serif;
+    position: relative;
+    z-index: 2; 
+    text-align: center; 
+    font-weight: bold; 
+    font-size: 50px;  
+    color: #fff; 
+    margin: 0; 
+    padding-top: 150px; 
+    padding-bottom: 150px;
+    letter-spacing: 4px;
+}
+
+.block-one {
+    font-family: "Comfortaa", sans-serif;
+    z-index: 2;
+    display: flex; 
+    line-height: 45.17px; 
+    margin-bottom: 40px; 
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+.work-list{
+z-index: 2;
+color: white;
+}
+
+.work-list::before {
+    content: "•"; 
+    color: white; 
+    font-size: 1.5em;
+    margin-right: 5px;
+}
+
+
+.image-placeholder {
+    width: 700px;
+    height: 500px; 
+    background-color: #2E8B57;
+    margin-right: 50px; 
+    margin-left: 100px;
+    margin-bottom: 200px;
+    border: 1px solid #ddd;
+    z-index: 2;
+}
+
+.section-list{
+display: block;
+}
+/*  */
+/*  */
+
+.result-container{
+    width: 100%;
+    position: relative;
+    height:auto;
+    background-color: #DCDCDC;
+    
+}
+
+.guarantee-section {
+   
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.guarantee-section h1 {
+    font-family:"EB Garamond", serif;
+    text-align: center;
+    margin-bottom: 250px;
+    font-size: 40px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.block-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    max-width: 100%;;
+}
+
+.block-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.outer-block{
+    background-color: #62996E;
+    width: 200px;
+    height: 200px; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-left: 785px;
+    margin-bottom: 100px;
+    position: absolute;
+}
+
+.outer-blok{
+    flex: 1;
+    background-color: #62996E;
+    width: 200px;
+    height: 200px; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-right: 800px;
+    margin-bottom: 100px;
+    position: absolute;
+}
+
+.number-block {
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-left: 100px; /* Можливо, це слід скоригувати в залежності від дизайну */
+    display: flex;
+    justify-content: center; /* Центрує вміст по горизонталі */
+    align-items: center; /* Центрує вміст по вертикалі */
+    height: 400px;
+    width: 750px;
+    margin-bottom: 100px;
+   
+}
+
+.number-blok{
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-right: 110px; /* Можливо, це слід скоригувати в залежності від дизайну */
+    display: flex;
+    justify-content: center; /* Центрує вміст по горизонталі */
+    align-items: center; /* Центрує вміст по вертикалі */
+    height: 400px;
+    width:750px;
+    margin-bottom: 100px;
+}
+
+
+.number {
+    font-size: 80px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #DCDCDC;
+    padding: 20px 30px;
+    width: 100px;
+    height: 100px;
+    display: flex; /* Додаємо флекс для центрування всередині */
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: center; /* Центруємо по вертикалі */
+    text-align: center; /* Вирівнює текст по центру */
+    margin-left: 780px;
+    position:relative;
+}
+
+.number-items{
+    font-size: 80px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #DCDCDC;
+    padding: 20px;
+    width: 100px;
+    height: 100px;
+    display: flex; /* Додаємо флекс для центрування всередині */
+    justify-content: center; /* Центруємо по горизонталі */
+    align-items: center; /* Центруємо по вертикалі */
+    text-align: center; /* Вирівнює текст по центру */
+    margin-right: 790px;
+    position: absolute;
+}
+
+.text-block {
+    font-family: "EB Garamond", serif;
+    flex: 1;
+    line-height: 45.17px;
+    background-color: #DCDCDC;
+    font-size: 25px;
+    padding: 20px;
+    margin-left: 170px;
+    margin-right: 130px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    height: 200px;
+    width: auto;
+   
+}
+
+.text-blok {
+    font-family: "EB Garamond", serif;
+    flex: 1;
+    line-height: 45.17px;
+    background-color: #DCDCDC;
+    font-size: 25px;
+    padding: 20px;
+    margin-right: 150px;
+    margin-left: 30px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    width: auto;
+}
+
+
+.bloc-row {
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    position: relative;
+    margin-bottom: 150px;
+}
+
+.bloc-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.number-blokc{
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin-right: 100px; /* Можливо, це слід скоригувати в залежності від дизайну */
+    display: flex;
+    justify-content: center; /* Центрує вміст по горизонталі */
+    align-items: center; 
+    height: 500px;
+    width: auto;
+    flex: 1;
+    margin-top: 200px;
+}
+
+.number-item{
+    outline: 10px solid #344F39;
+    height: 320px;
+    width: 1650px;
+    position: absolute;
+    margin-right: 1050px;
+    margin-left: 50px;
+    
+}
+
+
+.text-blok h2 {
+    margin-left: 150px;
+    font-weight: 700px;
+    margin-top: 250px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    position: relative; 
+    z-index: 10; 
+}
+.number-item img {
+    position: absolute;
+    top: -50px; 
+    max-width: 40%;
+    margin-left: 900px;
+}
+
+.text-blok button {
+    position: relative; 
+    z-index: 10; 
+    display: block; 
+    margin: 50px auto 0 auto;
+    margin-top: 50px;
+    background-color: #344F39;
+    color: white;
+    padding: 15px 50px;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    border-radius: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.text-blok button:hover {
+    background-color: #257e37;
+}
+
+.footer {
+    font-family: 'Segoe UI', Tahoma, 'Geneva', Verdana, sans-serif;
+    height: auto;
+    background-color: #344F39; 
+    color: white; 
+    padding: 20px; 
+    text-align: center; 
+    position: relative; 
+}
+
+.footer a {
+    color: white; 
+    text-decoration: none;
+    font-size:larger;
+}
+
+.footer a:hover {
+    text-decoration: underline; 
+}
+
+.footer h2{
+    font-family:'Koulen';
+    
+}
+
+.footer img {
+    max-width: 100%; 
+    height: auto; 
+    margin-bottom: 55px; 
+}
+
+.footer-container {
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+
+.footer-text{
+    text-align:left ;
+    line-height: 36.13px;
+    font-size: 25px;
+    flex: 1.7;  
+    margin-right: 400px; 
+    letter-spacing:  2px;
+}
+
+.footer-contacts{
+    line-height: 36.13px;
+    text-align: left;
+    flex: 1.3; 
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.footer-contacts h2{
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+.contact-item {
+    display: flex; /* Використовуємо Flexbox для вирівнювання іконки та інформації */
+    align-items: flex-start; /* Вирівнюємо по верхньому краю */
+    justify-content: flex-start; /* Вирівнюємо по лівому краю */
+    margin-bottom: 20px;
+}
+
+.icon {
+    padding: 5px;
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    margin-right: 10px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.email {
+    display: inline-block; 
+    text-decoration: none; 
+    padding: 5px ; 
+    border-radius: 100%;
+    font-size: 16px; 
+    font-weight: bold; 
+    text-align: center; 
+    margin-top: 10px; 
+    cursor: pointer;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.icon-two{
+   background-color: white;
+    width: 70px; 
+    height: 70px; 
+     padding: 8px 5px;
+    border-radius: 100%; 
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.3s ease; 
+}
+
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Розміщуємо номер і кнопку вертикально */
+    align-items: flex-start; /* Вирівнюємо номер і кнопку по лівому краю */
+}
+
+
+
+.consultation-button {
+    background-color: white;
+    color: #2e6e4c;
+    border: none;
+    padding: 5px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 50px;
+   
+}
+
+.consultation-button:hover {
+    background-color: #d3d3d3;
+}
+
+
+.footer-nav{
+    text-align: left;
+    flex: 1; 
+
+}
+
+.footer-nav p{
+    font-size:20px;
+    line-height: 36.13px;
+}
+
+.rgb{
+color:#03CB2F;
+}
+
+

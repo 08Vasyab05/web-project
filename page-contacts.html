@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Контакти</title>
+    <link rel="stylesheet" href="style-contacts.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="logo-container">
+                <img class="logo-img" src="Photo/logo.png" alt="logo">
+            </div>
+            <ul class="nav-list">
+                <li class="nav-list-link"><a href="page1.html">ГОЛОВНА</a></li>
+                <li class="nav-list-link"><a href="page2.html">ПОСЛУГИ ТА ПРОДУКЦІЯ</a></li>
+                <li class="nav-list-link"><a href="page3.html">ПОРТФОЛІО</a></li>
+                <li class="nav-list-link"><a href="page4.html">ПРО НАС</a></li>
+                <li class="nav-list-link"><a href="page-contacts.html">КОНТАКТИ</a></li>
+                <li class="ua-container">
+                    <img src="Photo/5467754832988332706.jpg" alt="UA" style="width: 30px; height: 20px; margin-right: 8px;">
+                    <span class="ua-text">UA</span>
+                </li>
+            </ul>
+
+            <div class="nav-toggle">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="button-hidden"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z" class=""></path></svg>
+              </div>
+
+        </nav>
+    </header>
+
+    <div class="contact-section">
+        <h2 class="underline">КОНТАКТИ</h2>
+        <div class="contact-content">
+            <div class="address">
+                <h3>АДРЕСА</h3>
+                <div class="map-placeholder">КАРТИ</div>
+            </div>
+            <div class="consultation-info">
+                <h3 class="left-text">НОМЕРИ ДЛЯ КОНСУЛЬТАЦІЇ</h3>
+                <div class="phone-info">
+                    <div><img src="Photo/54677548329883327012.png" class="fas-fa-phone"> Номер телефону</div>
+                    <div><img src="Photo/54677548329883327012.png" class="fas-fa-phone"> Номер телефону</div>
+                    <div><img src="Photo/54677548329883327012.png" class="fas-fa-phone"> Номер телефону</div>
+                </div>
+            </div>
+            <div class="email-info">
+                <h3 class="left-text">ЕЛЕКТРОННА ПОШТА</h3>
+                <div><img src="Photo/54677548329883327042.png" class="fas-fa-envelope"> eco.hata@gmfil.com</div>
+            </div>
+        </div>
+        <button class="consultation-button" id="consultationButton">ОТРИМАТИ КОНСУЛЬТАЦІЮ</button>
+    </div>
+<div class="color">
+</div>
+
+<div class="modal-overlay" id="modal">
+    <div class="modal-content">
+        <h2>ECO HOUS</h2>
+        <p>Отримати консультацію</p>
+        <form>
+            <input type="text" placeholder="Введіть ім'я користувача">
+            <input type="tel" placeholder="Введіть номер телефону">
+            <input type="email" placeholder="Введіть E-MAIL адресу">
+            <button type="submit">Надіслати</button>
+        </form>
+    </div>
+</div>
+<script src="./contact.js"></script>
+</body>
+</html>
